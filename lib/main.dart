@@ -31,41 +31,47 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {});
   }*/
 
+  Color circleColor = Colors.grey[400]!;
+
+  void _myFunction() {
+    setState(() {
+      print('$circleColor');
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
         title: Text(
-          "00:00",
+          "10:00",
           style: TextStyle(fontSize: 24),
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(left:16,top: 80, right:16,bottom: 60),
+        padding:
+            const EdgeInsets.only(left: 16, top: 80, right: 16, bottom: 60),
         child: GridView.count(
           crossAxisCount: 3,
           children: List.generate(9, (index) {
             return Center(
-              child:  Container(
+                child: GestureDetector(
+              onTap: () => print(index),
+              child: Container(
                 width: 90.0,
                 height: 90.0,
                 decoration: new BoxDecoration(
-                  color: Colors.grey[400],
+                  color: circleColor,
                   shape: BoxShape.circle,
                 ),
-              )
-            ); //Center
+              ),
+            )); //Center
           }),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          //_myFunction();
-        },
-
-        //onPressed: _incrementCounter,
-        mini: false,
+        onPressed: _myFunction,
         backgroundColor: Colors.blueAccent,
         child: Icon(Icons.play_arrow),
         //materialTapTargetSize: MaterialTapTargetSize.padded,
@@ -82,3 +88,5 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+//enum CircleState { readyToBePressed, waiting, pressed }

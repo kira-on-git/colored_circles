@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Test Reaction',
-      home: MyHomePage(title: 'Test Reaction'),
+      home: MyHomePage(title: 'Test Your Reaction'),
     );
   }
 }
@@ -209,6 +209,8 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked ,
+      bottomNavigationBar: BottomAppBar(child: SizedBox(height: 60,) ,),
     );
   }
 }

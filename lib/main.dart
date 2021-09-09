@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
+//import 'dart:math';
 
 void main() {
   runApp(MyApp());
@@ -35,62 +35,28 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        backgroundColor: Colors.blueAccent,
+        title: Text(
+          "00:00",
+          style: TextStyle(fontSize: 24),
+        ),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 60, bottom: 40),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 16.0, right: 16.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
-                    child: TapButton(),
-                  ),
-                  TapButton(),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
-                    child: TapButton(),
-                  ),
-                ],
-              ),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
-                  child: TapButton(),
+        padding: const EdgeInsets.only(left:16,top: 80, right:16,bottom: 60),
+        child: GridView.count(
+          crossAxisCount: 3,
+          children: List.generate(9, (index) {
+            return Center(
+              child:  Container(
+                width: 90.0,
+                height: 90.0,
+                decoration: new BoxDecoration(
+                  color: Colors.grey[400],
+                  shape: BoxShape.circle,
                 ),
-               TapButton(),
-                Padding(
-                  padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
-                  child: TapButton(),
-                ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 16.0, right: 16.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
-                    child: TapButton(),
-                  ),
-                  TapButton(),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
-                    child: TapButton(),
-                  ),
-                ],
-              ),
-            ),
-          ],
+              )
+            ); //Center
+          }),
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -99,33 +65,19 @@ class _MyHomePageState extends State<MyHomePage> {
         },
 
         //onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+        mini: false,
+        backgroundColor: Colors.blueAccent,
+        child: Icon(Icons.play_arrow),
+        //materialTapTargetSize: MaterialTapTargetSize.padded,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
-        child: SizedBox(
+        shape: CircularNotchedRectangle(),
+        notchMargin: 6,
+        color: Colors.blueAccent,
+        child: Container(
           height: 60,
         ),
-      ),
-    );
-  }
-}
-
-class TapButton extends StatelessWidget {
-
-  const TapButton({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 90.0,
-      height: 90.0,
-      decoration: new BoxDecoration(
-        color: Colors.grey[400],
-        shape: BoxShape.circle,
       ),
     );
   }

@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 40, bottom: 40),
+        padding: const EdgeInsets.only(top: 60, bottom: 40),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -47,28 +47,14 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
-                        child: _tapButton(),
-                      )
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
+                    child: TapButton(),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      _tapButton()                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
-                        child: _tapButton(),
-                      )
-                    ],
+                  TapButton(),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
+                    child: TapButton(),
                   ),
                 ],
               ),
@@ -76,28 +62,14 @@ class _MyHomePageState extends State<MyHomePage> {
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
-                      child: _tapButton(),
-                    )
-                  ],
+                Padding(
+                  padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
+                  child: TapButton(),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    _tapButton()                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
-                      child: _tapButton(),
-                    )
-                  ],
+               TapButton(),
+                Padding(
+                  padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
+                  child: TapButton(),
                 ),
               ],
             ),
@@ -106,27 +78,14 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
-                        child: _tapButton(),
-                      )
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
+                    child: TapButton(),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [_tapButton()],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
-                        child: _tapButton(),
-                      )
-                    ],
+                  TapButton(),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
+                    child: TapButton(),
                   ),
                 ],
               ),
@@ -153,8 +112,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class _tapButton extends StatelessWidget {
-  const _tapButton({
+class TapButton extends StatelessWidget {
+
+  const TapButton({
     Key? key,
   }) : super(key: key);
 
@@ -164,7 +124,7 @@ class _tapButton extends StatelessWidget {
       width: 90.0,
       height: 90.0,
       decoration: new BoxDecoration(
-        color: Colors.blue,
+        color: Colors.grey[400],
         shape: BoxShape.circle,
       ),
     );

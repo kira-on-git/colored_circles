@@ -25,11 +25,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _myVariable = 0;
+  /*int _myVariable = 0;
 
   void _myFunction() {
     setState(() {});
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -38,12 +38,12 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 40,bottom: 40),
+        padding: const EdgeInsets.only(top: 40, bottom: 40),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 16.0,right: 16.0),
+              padding: const EdgeInsets.only(left: 16.0, right: 16.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -52,43 +52,21 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
-                        child: Container(
-                          width: 90.0,
-                          height: 90.0,
-                          decoration: new BoxDecoration(
-                            color: Colors.blue,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
+                        child: _tapButton(),
                       )
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        width: 90.0,
-                        height: 90.0,
-                        decoration: new BoxDecoration(
-                          color: Colors.blue,
-                          shape: BoxShape.circle,
-                        ),
-                      )
-                    ],
+                      _tapButton()                    ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
-                        child: Container(
-                          width: 90.0,
-                          height: 90.0,
-                          decoration: new BoxDecoration(
-                            color: Colors.blue,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
+                        child: _tapButton(),
                       )
                     ],
                   ),
@@ -103,49 +81,28 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
-                      child: Container(
-                        width: 90.0,
-                        height: 90.0,
-                        decoration: new BoxDecoration(
-                          color: Colors.blue,
-                          shape: BoxShape.circle,
-                        ),
-                      ),
+                      child: _tapButton(),
                     )
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      width: 90.0,
-                      height: 90.0,
-                      decoration: new BoxDecoration(
-                        color: Colors.blue,
-                        shape: BoxShape.circle,
-                      ),
-                    )
-                  ],
+                    _tapButton()                  ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
-                      child: Container(
-                        width: 90.0,
-                        height: 90.0,
-                        decoration: new BoxDecoration(
-                          color: Colors.blue,
-                          shape: BoxShape.circle,
-                        ),
-                      ),
+                      child: _tapButton(),
                     )
                   ],
                 ),
               ],
-            ), Padding(
-              padding: const EdgeInsets.only(left: 16.0,right: 16.0),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 16.0, right: 16.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -154,43 +111,20 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
-                        child: Container(
-                          width: 90.0,
-                          height: 90.0,
-                          decoration: new BoxDecoration(
-                            color: Colors.blue,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
+                        child: _tapButton(),
                       )
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: 90.0,
-                        height: 90.0,
-                        decoration: new BoxDecoration(
-                          color: Colors.blue,
-                          shape: BoxShape.circle,
-                        ),
-                      )
-                    ],
+                    children: [_tapButton()],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
-                        child: Container(
-                          width: 90.0,
-                          height: 90.0,
-                          decoration: new BoxDecoration(
-                            color: Colors.blue,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
+                        child: _tapButton(),
                       )
                     ],
                   ),
@@ -202,15 +136,37 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          _myFunction();
+          //_myFunction();
         },
 
         //onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked ,
-      bottomNavigationBar: BottomAppBar(child: SizedBox(height: 60,) ,),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomAppBar(
+        child: SizedBox(
+          height: 60,
+        ),
+      ),
+    );
+  }
+}
+
+class _tapButton extends StatelessWidget {
+  const _tapButton({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 90.0,
+      height: 90.0,
+      decoration: new BoxDecoration(
+        color: Colors.blue,
+        shape: BoxShape.circle,
+      ),
     );
   }
 }
